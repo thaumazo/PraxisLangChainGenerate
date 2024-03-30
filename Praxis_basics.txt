@@ -1,0 +1,236 @@
+Praxis is a tool for running CMEs. In Praxis:
+- Pods are groups involved in the training who work together
+- MSEL is the master scenario event list
+- Injects should be appropriate for the pod that receives them
+- Output should be a JSON file that follows the format of this example:
+
+{
+  "msel": {
+    "exportVersion": "2.2.1.1595633596000",
+    "mselId": 581,
+    "clientId": 904,
+    "name": "Scenario Test 1",
+    "description": "This is a general test of the Praxis system, to understand its capabilities, file formats, and the import / export process.",
+    "startTime": "2024-03-09T02:56:05.000Z",
+    "endTime": "2024-03-11T02:56:05.000Z",
+    "isTemplate": 0,
+    "pods": {
+      "Incident Command": {
+        "podId": 1707,
+        "name": "Incident Command",
+        "injects": [
+          {
+            "position": 1,
+            "name": "Fire Intensity Increase",
+            "injectType": 99,
+            "path": "",
+            "libraryInjectFolderId": 277,
+            "libraryInjectId": 2433,
+            "task": "Overnight, the fire has unexpectedly jumped containment lines due to strong winds. Aerial reconnaissance reports a critical fire front advancing towards a populated area. Decide on reallocating aerial firefighting resources, including water bombers and helicopters, from less critical areas to this new threat.\n\nBackground: The wind direction is forecasted to remain steady, pushing the fire towards the community. Ground crews are stretched thin, and aerial support is crucial to prevent the fire from reaching homes.",
+            "taskTimeAllowed": "00:15:00",
+            "decisionType": "default",
+            "decisionTypeConfig": null
+          },
+          {
+            "position": 2,
+            "name": "Wind Shift Warning",
+            "injectType": 99,
+            "path": "",
+            "libraryInjectFolderId": 277,
+            "libraryInjectId": 2441,
+            "task": "Meteorological data indicates an imminent significant wind direction shift, potentially driving the fire towards another community. Reassess fire containment strategies and resource allocation in anticipation of the wind shift.\n\nBackground: The Incident Command must quickly adapt to the changing conditions to prevent further spread of the fire and potential loss of life and property.",
+            "taskTimeAllowed": "00:20:00",
+            "decisionType": "default",
+            "decisionTypeConfig": null
+          }
+        ],
+        "resources": []
+      },
+      "Evac & Shelter Mgmt": {
+        "podId": 1708,
+        "name": "Evac & Shelter Mgmt",
+        "injects": [
+          {
+            "position": 1,
+            "name": "Evacuation Order Expansion",
+            "injectType": 99,
+            "path": "",
+            "libraryInjectFolderId": 278,
+            "libraryInjectId": 2434,
+            "task": "The fire's unexpected growth has necessitated the expansion of evacuation orders to include two additional residential areas. Determine the new zones and communicate with the Public Info & Comm Pod for immediate dissemination of evacuation orders through all available channels.",
+            "taskTimeAllowed": "00:20:00",
+            "decisionType": "default",
+            "decisionTypeConfig": null
+          }
+        ],
+        "resources": []
+      },
+      " Info & Comm Pod": {
+        "podId": 1709,
+        "name": " Info & Comm Pod",
+        "injects": [
+          {
+            "position": 1,
+            "name": "Media Misinformation",
+            "injectType": 99,
+            "path": "",
+            "libraryInjectFolderId": 279,
+            "libraryInjectId": 2435,
+            "task": " Misinformation is spreading on social media, claiming the wildfire is largely contained and it's safe to return to evacuated areas. This false information risks lives. Develop and release an official statement to correct this misinformation and ensure the community receives accurate updates.\n\nBackground: The misinformation has been shared thousands of times and is causing confusion among residents. Clear, accurate communication is vital to maintain public safety.",
+            "taskTimeAllowed": "00:10:00",
+            "decisionType": "default",
+            "decisionTypeConfig": null
+          }
+        ],
+        "resources": []
+      },
+      "Logistics & Resource": {
+        "podId": 1710,
+        "name": "Logistics & Resource",
+        "injects": [
+          {
+            "position": 1,
+            "name": "Supply Line Disruption",
+            "injectType": 99,
+            "path": "",
+            "libraryInjectFolderId": 280,
+            "libraryInjectId": 2436,
+            "task": "A major route for delivering firefighting supplies has been cut off by the fire. Identify alternative supply routes and prioritize the delivery of critical resources, including food, water, and firefighting equipment, to the front lines.\n\nBackground: The disruption threatens to delay the arrival of much-needed supplies. Timely logistics planning is required to ensure no interruption in firefighting efforts.",
+            "taskTimeAllowed": "00:15:00",
+            "decisionType": "default",
+            "decisionTypeConfig": null
+          }
+        ],
+        "resources": []
+      },
+      "Infra Protection": {
+        "podId": 1711,
+        "name": "Infra Protection",
+        "injects": [
+          {
+            "position": 1,
+            "name": "Critical Facility Threatened",
+            "injectType": 99,
+            "path": "",
+            "libraryInjectFolderId": 281,
+            "libraryInjectId": 2437,
+            "task": "The advancing fire now threatens the town's water treatment plant, risking significant damage to vital infrastructure and potential contamination. Plan immediate protective measures and allocate necessary resources.\n\nThe plant is critical for the town’s water supply. Protecting it is a high priority to prevent a secondary crisis of water shortage or contamination.",
+            "taskTimeAllowed": " 00:20:00",
+            "decisionType": "default",
+            "decisionTypeConfig": null
+          }
+        ],
+        "resources": []
+      },
+      " Medical & Health Pod": {
+        "podId": 1712,
+        "name": " Medical & Health Pod",
+        "injects": [
+          {
+            "position": 1,
+            "name": "Mass Casualty Incident",
+            "injectType": 99,
+            "path": "",
+            "libraryInjectFolderId": 282,
+            "libraryInjectId": 2438,
+            "task": "A sudden fire flare-up in a recently evacuated area has resulted in numerous burn and smoke inhalation victims. Coordinate with local hospitals to ensure adequate reception capabilities and prioritize the treatment of the critically injured.\n\nLocal healthcare facilities are already under strain from the ongoing crisis. Efficiently managing this surge in casualties is crucial to save lives.",
+            "taskTimeAllowed": "00:30:00",
+            "decisionType": "default",
+            "decisionTypeConfig": null
+          }
+        ],
+        "resources": []
+      },
+      "Recovery & Rebuild": {
+        "podId": 1713,
+        "name": "Recovery & Rebuild",
+        "injects": [
+          {
+            "position": 1,
+            "name": " Immediate Aid Request",
+            "injectType": 99,
+            "path": "",
+            "libraryInjectFolderId": 283,
+            "libraryInjectId": 2439,
+            "task": "With hundreds displaced by the evacuation orders, there's an urgent need for emergency financial aid and supplies. Organize a response plan to meet these immediate needs by coordinating with NGOs and government agencies.\n\nBackground: The displaced populations are in urgent need of shelter, food, and medical supplies. Quick action can alleviate their immediate suffering and support their recovery.",
+            "taskTimeAllowed": " 00:25:00",
+            "decisionType": "default",
+            "decisionTypeConfig": null
+          }
+        ],
+        "resources": []
+      },
+      "Investigate & Analyze": {
+        "podId": 1714,
+        "name": "Investigate & Analyze",
+        "injects": [
+          {
+            "position": 1,
+            "name": "Origin Point Identified",
+            "injectType": 99,
+            "path": "",
+            "libraryInjectFolderId": 284,
+            "libraryInjectId": 2440,
+            "task": "Preliminary investigations have pinpointed the wildfire's origin. Begin a thorough investigation to determine the cause, ensuring coordination with Incident Command to safely access the site.\n\nBackground: Understanding the cause of the wildfire is critical for preventing future incidents. The investigation must proceed without hindering firefighting efforts.",
+            "taskTimeAllowed": " 00:30:00",
+            "decisionType": "default",
+            "decisionTypeConfig": null
+          }
+        ],
+        "resources": []
+      }
+    },
+    "settings": [
+      {
+        "name": "quickReplyChoices",
+        "value": null,
+        "ui_type": "SHORT_TEXT"
+      },
+      {
+        "name": "Test1",
+        "value": null,
+        "ui_type": "SHORT_TEXT"
+      },
+      {
+        "name": "hideRationaleBox",
+        "value": null,
+        "ui_type": "CHECK"
+      },
+      {
+        "name": "fullMselInjectPreview",
+        "value": null,
+        "ui_type": "CHECK"
+      },
+      {
+        "name": "Hide Ask SME",
+        "value": null,
+        "ui_type": "CHECK"
+      },
+      {
+        "name": "* hideAskSme",
+        "value": null,
+        "ui_type": "CHECK"
+      },
+      {
+        "name": "hideAskSme",
+        "value": null,
+        "ui_type": "CHECK"
+      },
+      {
+        "name": "hideGroupChat",
+        "value": null,
+        "ui_type": "CHECK"
+      },
+      {
+        "name": "StartScenarioInPOD",
+        "value": null,
+        "ui_type": "CHECK"
+      },
+      {
+        "name": "DisablePODAudioGroupChat",
+        "value": null,
+        "ui_type": "CHECK"
+      }
+    ]
+  }
+}
